@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: casino-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./casino/data:/usr/src/app/casino/data
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

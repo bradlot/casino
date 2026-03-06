@@ -1,0 +1,22 @@
+{
+  "name": "casino",
+  "version": "1.0.0",
+  "description": "",
+  "main": "casino/src/index.js",
+  "scripts": {
+    "start": "node casino/src/index.js",
+    "dev": "nodemon casino/src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "node casino/deploy-commands.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "better-sqlite3": "^12.6.2",
+    "discord.js": "^14.25.1",
+    "dotenv": "^17.3.1",
+    "nodemon": "^3.1.14"
+  }
+}
