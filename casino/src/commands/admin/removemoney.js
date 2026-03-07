@@ -27,10 +27,10 @@ module.exports = {
             return interaction.reply({ content: 'Amount must be greater than 0.', ephemeral: true });
         }
 
-        const userProfile = EconomyManager.getUser(targetUser.id);
+        const userProfile = EconomyManager.getUser(interaction.guildId, targetUser.id);
         const actualRemove = Math.min(amount, userProfile.balance); // Don't throw them into negatives
 
-        EconomyManager.removeWallet(targetUser.id, actualRemove);
+        EconomyManager.removeWallet(interaction.guildId, targetUser.id, actualRemove);
 
         const embed = new EmbedBuilder()
             .setColor(config.errorColor)

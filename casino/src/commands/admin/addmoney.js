@@ -27,7 +27,7 @@ module.exports = {
             return interaction.reply({ content: 'Amount must be greater than 0.', ephemeral: true });
         }
 
-        EconomyManager.addWallet(targetUser.id, amount);
+        EconomyManager.addWallet(interaction.guildId, targetUser.id, amount);
 
         const embed = new EmbedBuilder()
             .setColor(config.successColor)

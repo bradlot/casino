@@ -27,7 +27,7 @@ module.exports = {
             return interaction.reply({ content: 'Amount cannot be negative.', ephemeral: true });
         }
 
-        EconomyManager.setWallet(targetUser.id, amount);
+        EconomyManager.setWallet(interaction.guildId, targetUser.id, amount);
 
         const embed = new EmbedBuilder()
             .setColor(config.themeColor)

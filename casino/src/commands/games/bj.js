@@ -206,7 +206,7 @@ module.exports = {
 
             if (finalPlayerValue > 21) {
                 StatsManager.addLoss(guildId, userId, 'bj', currentBet);
-                await i.update({ embeds: [buildEmbed('LOSE', true, 'You busted!')], components: [getRow(true)] });
+                await i.update({ embeds: [buildEmbed('LOSE', true, 'You busted!')], components: [] });
                 AchievementManager.checkAll(guildId, userId, interaction);
                 return;
             }
@@ -239,11 +239,11 @@ module.exports = {
                 const leveledUp = XPManager.addXp(guildId, userId, config.xpSystem.rewards.bj_win);
                 if (leveledUp) lvlMsg += `\n**🆙 You leveled up!**`;
 
-                await i.update({ embeds: [buildEmbed('WIN', true, 'Dealer busted!', payout, lvlMsg)], components: [getRow(true)] });
+                await i.update({ embeds: [buildEmbed('WIN', true, 'Dealer busted!', payout, lvlMsg)], components: [] });
             } else if (finalDealerValue === finalPlayerValue) {
                 EconomyManager.addWallet(guildId, userId, currentBet);
                 StatsManager.addPush(guildId, userId, 'bj');
-                await i.update({ embeds: [buildEmbed('PUSH', true, 'It\'s a tie!', 0, lvlMsg)], components: [getRow(true)] });
+                await i.update({ embeds: [buildEmbed('PUSH', true, 'It\'s a tie!', 0, lvlMsg)], components: [] });
             } else if (finalPlayerValue > finalDealerValue) {
                 const payout = Math.floor(currentBet * config.games.blackjack.payoutMultiplier);
                 EconomyManager.addWallet(guildId, userId, payout);
@@ -253,10 +253,10 @@ module.exports = {
                 const leveledUp = XPManager.addXp(guildId, userId, config.xpSystem.rewards.bj_win);
                 if (leveledUp) lvlMsg += `\n**🆙 You leveled up!**`;
 
-                await i.update({ embeds: [buildEmbed('WIN', true, 'You beat the dealer!', payout, lvlMsg)], components: [getRow(true)] });
+                await i.update({ embeds: [buildEmbed('WIN', true, 'You beat the dealer!', payout, lvlMsg)], components: [] });
             } else {
                 StatsManager.addLoss(guildId, userId, 'bj', currentBet);
-                await i.update({ embeds: [buildEmbed('LOSE', true, 'Dealer wins!', 0, lvlMsg)], components: [getRow(true)] });
+                await i.update({ embeds: [buildEmbed('LOSE', true, 'Dealer wins!', 0, lvlMsg)], components: [] });
 
                 // Pity bankruptcy check
                 const u = EconomyManager.getUser(guildId, userId);
@@ -303,7 +303,7 @@ module.exports = {
                 StatsManager.addLoss(guildId, userId, 'bj', currentBet);
                 interaction.editReply({
                     embeds: [buildEmbed('LOSE', true, 'Game timed out. You folded and lost your bet.')],
-                    components: [getRow(true)]
+                    components: []
                 }).catch(() => { });
                 AchievementManager.checkAll(guildId, userId, interaction);
             }
