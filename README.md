@@ -19,14 +19,14 @@ With over 16 integrated internal modules ranging from interactive Blackjack to a
 
 ## Key Features
 
-- **Robust Economy System**: Persisted balances with independent wallets and bank accounts (`=deposit`, `=withdraw`).
-- **Risk & Reward Mechanics**: Engage users with daily rewards (`=payday`), randomized shifts (`=work`), risk-based crimes (`=crime`), and direct player-vs-player robbing (`=rob`).
-- **Interactive Casino Games**: A fully interactive Blackjack engine (`=bj`) featuring soft-17 dealer AI, true deck shuffling, natural blackjack 3:2 payouts, and in-place message editing via Discord Button Components.
-- **Dynamic Role Shop & Buffs**: A paginated storefront (`=shop`) where players can buy exclusive Discord roles, or purchase temporary, stackable account buffs (e.g. *Work Payout Multiplier*, *Robbery Protection*).
-- **Leveling & XP Perks**: A passive background leveling system that scales economy payouts, reduces crime failure penalties, and natively reduces blackjack house-edge as players level up (`=level`).
-- **Extensive Statistics**: A background tracker that meticulously logs user Win/Loss rates, historic biggest wins, and total net-worth (`=stats`, `=leaderboard`).
-- **Exploit-Free Achievements**: 18+ unlockable achievements that passively monitor user stats and grant massive cash payouts when triggered (`=achievements`).
-- **Live Event Administration**: A dynamic, database-backed template system where admins can trigger server-wide events (like *Double Payday Weekend*) with precise time durations (`=event double_payday 24h`).
+- **Robust Economy System**: Persisted balances with independent wallets and bank accounts (`/deposit`, `/withdraw`).
+- **Risk & Reward Mechanics**: Engage users with daily rewards (`/payday`), randomized shifts (`/work`), risk-based crimes (`/crime`), and direct player-vs-player robbing (`/rob`).
+- **Interactive Casino Games**: A fully interactive Blackjack engine (`/bj`) featuring soft-17 dealer AI, true deck shuffling, natural blackjack 3:2 payouts, and in-place message editing via Discord Button Components.
+- **Dynamic Role Shop & Buffs**: A paginated storefront (`/shop`) where players can buy exclusive Discord roles, or purchase temporary, stackable account buffs (e.g. *Work Payout Multiplier*, *Robbery Protection*).
+- **Leveling & XP Perks**: A passive background leveling system that scales economy payouts, reduces crime failure penalties, and natively reduces blackjack house-edge as players level up (`/level`).
+- **Extensive Statistics**: A background tracker that meticulously logs user Win/Loss rates, historic biggest wins, and total net-worth (`/stats`, `/leaderboard`).
+- **Exploit-Free Achievements**: 18+ unlockable achievements that passively monitor user stats and grant massive cash payouts when triggered (`/achievements`).
+- **Live Event Administration**: A dynamic, database-backed template system where admins can trigger server-wide events (like *Double Payday Weekend*) with precise time durations (`/event double_payday 24h`).
 - **100% Configurable**: Absolutely zero magic-numbers in the logic files. Every payout, odd, multiplier, limit, string, and requirement is editable inside a massive, centralized `config.js` file.
 
 ---
@@ -59,7 +59,7 @@ With over 16 integrated internal modules ranging from interactive Blackjack to a
 
 4. **Tune the Configuration**
    Open `config.js` to modify the bot to match your server's exact theme:
-   - Command Prefix (default is `=`).
+   - Command Prefix (default is `/`).
    - `casinoChannelId`: Restrict bot commands to a specific channel (leave empty for global access).
    - Customize embedding colors, emojis, 18+ scenarios, shop items, and achievement thresholds.
 
